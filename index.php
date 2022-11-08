@@ -1,5 +1,9 @@
 <?php
 include "function_tala_stopword.php";
+include "function_stemming.php";
+include "koneksi.php";
+$conn = connect();
+
 $kalimat_awal="Menko Polhukam Mahfud Md menyatakan pengelolaan dana otonomi khusus (otsus) Papua tidak beres. Karenanya, dana otsus dinaikkan menjadi 2,25 persen dari Dana Alokasi Khusus APBN";
 echo "<h1> Kalimat Awal </h1>";
 echo $kalimat_awal;
@@ -68,4 +72,20 @@ echo "</table>";
 // stemming process from $kalimat_filtering2
 echo "<br><br>";
 echo "<h1> Stemming </h1>";
+$stemming=array();
+foreach ($kalimat_filtering2 as $kf) {
+    $stemming[]=stem($kf);
+}
+echo "<h4> Hasil Stemming </h4>";
+var_dump($stemming);
+// display $stemming as table
+echo "<table border='1'>";
+echo "<tr><th> No </th><th> Kata </th></tr>";
+$no=1;
+foreach ($stemming as $st) {
+    echo "<tr><td>".$no."</td><td>".$st."</td></tr>";
+    $no++;
+}
+echo "</table>";
+
 ?>
