@@ -1,0 +1,13 @@
+relevan
+
+ada persepsi yang disamakan
+standarisasi penyamaan arti penyamaan persepsi
+
+buat program yg smpe uts, yg smpe stemming
+
+tokenisasi (memisahkan kata berdasarkan spasi)
+
+filtering (pada dasar/pedomannya stopword tala)
+
+hilangin tanda baca, hilangin angka
+project complete no.10
